@@ -5,6 +5,7 @@ import com.comphenix.protocol.events.ListenerPriority;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.WrappedChatComponent;
 import me.lucko.helper.Commands;
+import me.lucko.helper.Events;
 import me.lucko.helper.function.Numbers;
 import me.lucko.helper.plugin.ExtendedJavaPlugin;
 import me.lucko.helper.plugin.ap.Plugin;
@@ -12,8 +13,13 @@ import me.lucko.helper.plugin.ap.PluginDependency;
 import me.lucko.helper.protocol.Protocol;
 import org.bukkit.Location;
 import org.bukkit.World;
+import org.bukkit.entity.Player;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerTeleportEvent.TeleportCause;
 
+import java.util.Map;
+import java.util.UUID;
+import java.util.WeakHashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -28,11 +34,18 @@ public class InteractiveProtect extends ExtendedJavaPlugin {
     private final static Pattern PAGINATION_PATTERN = Pattern.compile("Page (\\d+)\\/(\\d+). View older");
 
     private final static String TELEPORT_COMMAND = "/tppos %x %y %z %world";
+    private final Map<UUID, Boolean> playerPermissions = new WeakHashMap<>();
 
     @Override
     protected void enable() {
+        Events.subscribe(PlayerJoinEvent.class)
+                .handler(e -> {
+                    Player player = e.getPlayer();
+                    playerPermissions.put(player.getUniqueId(), player.hasPermission("ip.interact"));
+                }).bindWith(this);
+
         Protocol.subscribe(ListenerPriority.MONITOR, Server.CHAT)
-                .filter(e -> e.getPlayer().hasPermission("ip.interact"))
+                .filter(e -> playerPermissions.getOrDefault(e.getPlayer().getUniqueId(), false))
                 .handler(e -> {
                     PacketContainer packet = e.getPacket();
                     WrappedChatComponent chat = packet.getChatComponents().read(0);
