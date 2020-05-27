@@ -17,7 +17,11 @@ import org.bukkit.event.player.PlayerTeleportEvent.TeleportCause;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@Plugin(name = "InteractiveProtect", version = "1.0.0", apiVersion = "1.15", depends = { @PluginDependency(value = "helper"), @PluginDependency(value = "ProtocolLib") })
+@Plugin(name = "InteractiveProtect", version = "1.0.0", apiVersion = "1.15", depends = {
+        @PluginDependency(value = "helper"),
+        @PluginDependency(value = "ProtocolLib"),
+        @PluginDependency(value = "CoreProtect")}
+)
 public class InteractiveProtect extends ExtendedJavaPlugin {
 
     private final static Pattern TELEPORT_PATTERN = Pattern.compile("\\(x(?<x>-?\\d+)\\/y(?<y>-?\\d+)\\/z(?<z>-?\\d+)(?:\\/(?<world>\\w+))?\\)");
