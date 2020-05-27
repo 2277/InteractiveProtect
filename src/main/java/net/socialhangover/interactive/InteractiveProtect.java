@@ -50,10 +50,14 @@ public class InteractiveProtect extends ExtendedJavaPlugin {
                     PacketContainer packet = e.getPacket();
                     WrappedChatComponent chat = packet.getChatComponents().read(0);
 
-                    if (chat == null) { return; }
+                    if (chat == null) {
+                        return;
+                    }
 
                     String json = chat.getJson();
-                    if (json == null) { return;}
+                    if (json == null) {
+                        return;
+                    }
 
                     StringBuilder sb = new StringBuilder(json);
 
