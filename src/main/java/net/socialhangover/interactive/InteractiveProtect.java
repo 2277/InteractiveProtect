@@ -34,18 +34,18 @@ public class InteractiveProtect extends ExtendedJavaPlugin {
     private final static Pattern PAGINATION_PATTERN = Pattern.compile("Page (\\d+)\\/(\\d+). View older");
 
     private final static String TELEPORT_COMMAND = "/tppos %x %y %z %world";
-    private final Map<UUID, Boolean> playerPermissions = new WeakHashMap<>();
+    private final Map<Player, Boolean> playerPermissions = new WeakHashMap<>();
 
     @Override
     protected void enable() {
         Events.subscribe(PlayerJoinEvent.class)
                 .handler(e -> {
                     Player player = e.getPlayer();
-                    playerPermissions.put(player.getUniqueId(), player.hasPermission("ip.interact"));
+                    playerPermissions.put(player, player.hasPermission("ip.interact"));
                 }).bindWith(this);
 
         Protocol.subscribe(ListenerPriority.MONITOR, Server.CHAT)
-                .filter(e -> playerPermissions.getOrDefault(e.getPlayer().getUniqueId(), false))
+                .filter(e -> playerPermissions.getOrDefault(e.getPlayer(), false))
                 .handler(e -> {
                     PacketContainer packet = e.getPacket();
                     WrappedChatComponent chat = packet.getChatComponents().read(0);
