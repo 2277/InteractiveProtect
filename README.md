@@ -10,6 +10,7 @@ oh yeah, you'll need this: [this](https://github.com/lucko/helper) and [that](ht
 
 ![cammo](camm.png)
 ![excellent addition to intelli's code](intelli1.png)
+![open source when](intelli3.png)
 ![alternative](intelli2.png)
 
 ## Disclaimer
