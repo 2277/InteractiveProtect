@@ -4,7 +4,13 @@
 
 we out here in 2020 and coreprotect doesn't have fancy interactive chat messages. 
 
-# Disclaimer
+## Officially ~~Dis~~approved by Intelli
+
+![cammo](camm.png)
+![excellent addition to intelli's code](intelli1.png)
+![alternative](intelli2.png)
+
+## Disclaimer
 
 i will not provide support for this plugin. it works fine with my server's setup but it'll likely break others. use at your own risk.
 
