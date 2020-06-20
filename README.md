@@ -2,7 +2,9 @@
 
 ![me clicking things to make a convincing gif](convincing_demo.gif)
 
-we out here in 2020 and coreprotect doesn't have fancy interactive chat messages. 
+we out here in 2020 and coreprotect doesn't have fancy interactive chat messages.
+
+oh yeah, you'll need this: [this](https://github.com/lucko/helper) and [that](https://www.spigotmc.org/resources/protocollib.1997/).
 
 ## Officially ~~Dis~~approved by Intelli
 
