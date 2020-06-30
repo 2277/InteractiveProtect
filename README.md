@@ -1,8 +1,10 @@
+> This project is no longer maintained. As of release 19.0, CoreProtect features interactive chat components and InteractiveProtect is no longer necessary. However, may be used alongside legacy/unsupported versions (<19.0). Check out: https://www.spigotmc.org/resources/coreprotect.8631/ for more information. Thank you, Intelli.
+
 # InteractiveProtect
 
 ![me clicking things to make a convincing gif](convincing_demo.gif)
 
-we out here in 2020 and coreprotect doesn't have fancy interactive chat messages.
+~~we out here in 2020 and coreprotect doesn't have fancy interactive chat messages.~~
 
 oh yeah, you'll need this: [this](https://github.com/lucko/helper) and [that](https://www.spigotmc.org/resources/protocollib.1997/).
 
