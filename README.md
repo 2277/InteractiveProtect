@@ -1,4 +1,4 @@
-> This project is no longer maintained. As of release 19.0, CoreProtect features interactive chat components and InteractiveProtect is no longer necessary. However, may be used alongside legacy/unsupported versions (<19.0). Check out: https://www.spigotmc.org/resources/coreprotect.8631/ for more information. Thank you, Intelli.
+> This project is no longer maintained. As of release 19.0, CoreProtect features interactive chat components and InteractiveProtect is no longer necessary. However, this may be used alongside legacy/unsupported versions (<19.0). Check out: https://www.spigotmc.org/resources/coreprotect.8631/ for more information. Thank you, Intelli.
 
 # InteractiveProtect
 
