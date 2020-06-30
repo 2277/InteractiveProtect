@@ -6,7 +6,7 @@
 
 ~~we out here in 2020 and coreprotect doesn't have fancy interactive chat messages.~~
 
-oh yeah, you'll need this: [this](https://github.com/lucko/helper) and [that](https://www.spigotmc.org/resources/protocollib.1997/).
+oh yeah, you'll need [ProtocolLib](https://www.spigotmc.org/resources/protocollib.1997/).
 
 ## Officially ~~Dis~~approved by Intelli
 
@@ -17,6 +17,6 @@ oh yeah, you'll need this: [this](https://github.com/lucko/helper) and [that](ht
 
 ## Disclaimer
 
-i will not provide support for this plugin. it works fine with my server's setup but it'll likely break others. use at your own risk.
+i will not provide support for this plugin. it works fine with my server's setup, but it'll likely break others. use at your own risk.
 
 \- Social Hangover

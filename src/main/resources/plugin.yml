@@ -1,0 +1,5 @@
+name: InteractiveProtect
+version: 1.0.0
+main: net.socialhangover.interactive.InteractiveProtect
+api-version: '1.15'
+depend: [ProtocolLib, CoreProtect]
