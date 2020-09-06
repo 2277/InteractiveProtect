@@ -31,6 +31,7 @@ public class InteractiveProtect extends JavaPlugin implements Listener {
         final String teleportCommand = getConfig().getString("teleport-command", "/tppos %x %y %z %world");
 
         getServer().getPluginManager().registerEvents(this, this);
+
         ProtocolLibrary.getProtocolManager().addPacketListener(new PacketAdapter(this, ListenerPriority.MONITOR, Server.CHAT) {
 
             @Override
@@ -67,18 +68,18 @@ public class InteractiveProtect extends JavaPlugin implements Listener {
 
                 matcher = PAGINATION_PATTERN.matcher(json);
                 if (matcher.find()) {
-                    Number current = Integer.parseInt(matcher.group(1));
-                    Number last = Integer.parseInt(matcher.group(2));
+                    int current = Integer.parseInt(matcher.group(1));
+                    int last = Integer.parseInt(matcher.group(2));
 
                     int start = matcher.start();
 
-                    if (current.intValue() >= 1 && current.intValue() < last.intValue()) {
+                    if (current >= 1 && current < last) {
                         sb.insert(start + 4, " \"},{\"text\":\">>>\",\"color\":\"gold\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/co l %page\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Click to navigate\"}},{\"color\":\"white\", \"text\":\""
-                                .replace("%page", String.valueOf(current.intValue() + 1)));
+                                .replace("%page", String.valueOf(current + 1)));
                     }
-                    if (current.intValue() > 1) {
+                    if (current > 1) {
                         sb.insert(start - 25, "{\"text\":\"<<< \",\"color\":\"gold\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/co l %page\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Click to navigate\"}},"
-                                .replace("%page", String.valueOf(current.intValue() - 1)));
+                                .replace("%page", String.valueOf(current - 1)));
                     }
                 }
 
